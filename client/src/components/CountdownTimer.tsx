@@ -22,7 +22,9 @@ const CountdownTimer = () => {
   const { mins, secs } = formatTime(timeLeft);
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50" style={{ backgroundColor: '#332816' }}>
+    <div className="fixed top-0 left-0 right-0 z-50" style={{ 
+      background: 'linear-gradient(90deg, #1a1a1a 0%, #332816 15%, #332816 85%, #1a1a1a 100%)' 
+    }}>
       <div className="px-6 py-4">
         <div className="max-w-4xl mx-auto flex items-center justify-between">
 
