@@ -25,13 +25,19 @@ const TestimonialsSection = () => {
     "/15.jpg"
   ];
 
+  // Agrupa as imagens de 3 em 3
+  const groupedImages = [];
+  for (let i = 0; i < testimonialImages.length; i += 3) {
+    groupedImages.push(testimonialImages.slice(i, i + 3));
+  }
+
   useEffect(() => {
     const interval = setInterval(() => {
       setIsTransitioning(true);
       
       // Aguarda um breve momento antes de mudar o slide
       setTimeout(() => {
-        setCurrentIndex((prev) => (prev + 1) % testimonialImages.length);
+        setCurrentIndex((prev) => (prev + 1) % groupedImages.length);
         
         // Remove a transição após um tempo para o slide ficar visível
         setTimeout(() => {
@@ -42,7 +48,7 @@ const TestimonialsSection = () => {
     }, 6000); // Intervalo de 6 segundos
 
     return () => clearInterval(interval);
-  }, [testimonialImages.length]);
+  }, [groupedImages.length]);
 
   return (
     <section className="elegant-section relative overflow-hidden" style={{ backgroundColor: '#332816' }}>
@@ -60,29 +66,35 @@ const TestimonialsSection = () => {
             <span className="text-elegant-gold animate-pulse"> inspiram</span>
           </h2>
 
-          {/* Carousel Container */}
+          {/* Carousel Container - Três imagens lado a lado */}
           <div className="relative overflow-hidden rounded-2xl bg-white/5 p-8">
             <div className="flex justify-center items-center">
-              <div className="w-full max-w-md relative">
-                <div className="relative h-[600px] rounded-xl overflow-hidden">
-                  {testimonialImages.map((image, index) => (
+              <div className="w-full max-w-6xl relative">
+                <div className="relative min-h-[500px] rounded-xl overflow-hidden">
+                  {groupedImages.map((imageGroup, groupIndex) => (
                     <div
-                      key={index}
+                      key={groupIndex}
                       className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
-                        index === currentIndex
+                        groupIndex === currentIndex
                           ? 'opacity-100 transform translate-x-0'
-                          : index === (currentIndex - 1 + testimonialImages.length) % testimonialImages.length
+                          : groupIndex === (currentIndex - 1 + groupedImages.length) % groupedImages.length
                           ? 'opacity-0 transform -translate-x-full'
                           : 'opacity-0 transform translate-x-full'
                       }`}
                     >
-                      <img
-                        src={image}
-                        alt={`Resultado ${index + 1}`}
-                        className="w-full h-full object-contain rounded-xl shadow-2xl border-4 border-elegant-gold/20"
-                        style={{ aspectRatio: '9/16' }}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-xl opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 h-full">
+                        {imageGroup.map((image, imageIndex) => (
+                          <div key={imageIndex} className="relative h-full">
+                            <img
+                              src={image}
+                              alt={`Resultado ${groupIndex * 3 + imageIndex + 1}`}
+                              className="w-full h-full max-h-[500px] object-contain rounded-xl shadow-2xl border-4 border-elegant-gold/20"
+                              style={{ aspectRatio: '9/16' }}
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-xl opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -92,7 +104,7 @@ const TestimonialsSection = () => {
 
           {/* Dots indicator */}
           <div className="flex justify-center space-x-2 mt-8">
-            {testimonialImages.map((_, index) => (
+            {groupedImages.map((_, index) => (
               <div
                 key={index}
                 className={`w-3 h-3 rounded-full transition-all duration-500 ${
@@ -120,7 +132,7 @@ const TestimonialsSection = () => {
       </div>
 
       {/* Custom CSS for smooth carousel */}
-      <style jsx="true">{`
+      <style>{`
         @keyframes slideIn {
           from {
             opacity: 0;
@@ -149,18 +161,22 @@ const TestimonialsSection = () => {
             padding-right: 1rem;
           }
           
-          .max-w-md {
+          .max-w-6xl {
             max-width: 100%;
           }
           
-          .h-\\[600px\\] {
-            height: 400px;
+          .min-h-\\[500px\\] {
+            min-height: 400px;
+          }
+          
+          .grid-cols-3 {
+            grid-template-columns: 1fr;
           }
         }
         
         @media (max-width: 480px) {
-          .h-\\[600px\\] {
-            height: 350px;
+          .min-h-\\[500px\\] {
+            min-height: 350px;
           }
           
           .space-y-12 > :not([hidden]) ~ :not([hidden]) {
