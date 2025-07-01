@@ -1,14 +1,14 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 
 const TestimonialsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(true);
 
   // Array com as imagens dos depoimentos
   const testimonialImages = [
     "/1.jpg",
-    "/2.png",
+    "/2.png", 
     "/3.png",
     "/4.png",
     "/5.png",
@@ -24,24 +24,17 @@ const TestimonialsSection = () => {
     "/15.jpg"
   ];
 
-  // Duplicar array para efeito infinito
-  const extendedImages = [...testimonialImages, ...testimonialImages, ...testimonialImages];
-
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => {
-        if (prev >= testimonialImages.length * 2) {
-          return 0;
-        }
-        return prev + 1;
-      });
-    }, 3000); // Muda a cada 3 segundos com pausa
+      setIsTransitioning(true);
+      setCurrentIndex((prev) => (prev + 1) % testimonialImages.length);
+    }, 2000); // Pausa de 2 segundos
 
     return () => clearInterval(interval);
   }, [testimonialImages.length]);
 
   return (
-    <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#332816' }}>
+    <section className="elegant-section relative overflow-hidden" style={{ backgroundColor: '#332816' }}>
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-10 left-10 w-20 h-20 border border-elegant-gold rounded-full animate-pulse"></div>
@@ -49,39 +42,30 @@ const TestimonialsSection = () => {
         <div className="absolute top-1/2 right-1/4 w-12 h-12 border border-elegant-gold rounded-full animate-pulse"></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-6xl mx-auto text-center animate-on-scroll">
-          <h2 className="text-4xl md:text-5xl font-playfair font-bold text-white mb-16">
+      <div className="container mx-auto px-6 max-w-7xl relative z-10">
+        <div className="text-center animate-on-scroll space-y-12">
+          <h2 className="heading-secondary text-white">
             Resultados reais que
             <span className="text-elegant-gold animate-pulse"> inspiram</span>
           </h2>
 
           {/* Carousel Container */}
           <div className="relative overflow-hidden rounded-2xl bg-white/5 p-8">
-            <div 
-              className="flex transition-transform duration-1000 ease-in-out"
-              style={{ 
-                transform: `translateX(-${currentIndex * (100 / 3)}%)`,
-                width: `${extendedImages.length * (100 / 3)}%`
-              }}
-            >
-              {extendedImages.map((image, index) => (
-                <div 
-                  key={index}
-                  className="flex-shrink-0 px-2"
-                  style={{ width: `${100 / extendedImages.length}%` }}
-                >
-                  <div className="relative group">
-                    <img
-                      src={image}
-                      alt={`Resultado ${(index % testimonialImages.length) + 1}`}
-                      className="w-full h-auto max-h-[600px] object-contain rounded-xl shadow-2xl border-4 border-elegant-gold/20 group-hover:border-elegant-gold/40 transition-all duration-300"
-                      style={{ aspectRatio: '9/16' }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  </div>
+            <div className="flex justify-center items-center">
+              <div className="w-full max-w-md">
+                <div className="relative">
+                  <img
+                    src={testimonialImages[currentIndex]}
+                    alt={`Resultado ${currentIndex + 1}`}
+                    className={`w-full h-auto max-h-[600px] object-contain rounded-xl shadow-2xl border-4 border-elegant-gold/20 transition-all duration-500 ${
+                      isTransitioning ? 'opacity-100 scale-100' : 'opacity-90 scale-95'
+                    }`}
+                    style={{ aspectRatio: '9/16' }}
+                    onLoad={() => setIsTransitioning(true)}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-xl opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
 
@@ -90,9 +74,12 @@ const TestimonialsSection = () => {
             {testimonialImages.map((_, index) => (
               <button
                 key={index}
-                onClick={() => setCurrentIndex(index)}
+                onClick={() => {
+                  setCurrentIndex(index);
+                  setIsTransitioning(true);
+                }}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  (currentIndex % testimonialImages.length) === index 
+                  currentIndex === index 
                     ? 'bg-elegant-gold shadow-lg scale-125' 
                     : 'bg-white opacity-50 hover:opacity-75'
                 }`}
@@ -107,38 +94,13 @@ const TestimonialsSection = () => {
               rel="noopener noreferrer"
               className="inline-block"
             >
-              <Button className="btn-gold text-white px-10 py-4 text-lg font-semibold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300">
+              <Button className="btn-gold text-white text-lg font-semibold">
                 Quero ter esses resultados também
               </Button>
             </a>
           </div>
         </div>
       </div>
-
-      {/* CSS for mobile responsiveness */}
-      <style jsx="true">{`
-        @media (max-width: 768px) {
-          .container {
-            padding-left: 1rem;
-            padding-right: 1rem;
-          }
-          
-          .flex-shrink-0 {
-            padding-left: 0.25rem;
-            padding-right: 0.25rem;
-          }
-          
-          img {
-            max-height: 400px;
-          }
-        }
-        
-        @media (max-width: 480px) {
-          img {
-            max-height: 300px;
-          }
-        }
-      `}</style>
     </section>
   );
 };
