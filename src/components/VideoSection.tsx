@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { Play } from 'lucide-react';
 
 const VideoSection = () => {
   return (
@@ -16,19 +15,18 @@ const VideoSection = () => {
             Veja como o método Finanças com Propósito pode transformar sua relação com o dinheiro
           </p>
 
-          {/* Video placeholder - substitua pela URL do vídeo real */}
+          {/* Video do YouTube */}
           <div className="relative bg-black rounded-2xl overflow-hidden shadow-2xl max-w-3xl mx-auto">
-            <div className="aspect-video flex items-center justify-center bg-gradient-to-br from-elegant-brown to-elegant-black">
-              <div className="text-center">
-                <div className="inline-flex items-center justify-center w-20 h-20 bg-elegant-gold rounded-full mb-4 hover:bg-opacity-90 transition-all duration-300 cursor-pointer">
-                  <Play className="w-8 h-8 text-white ml-1" />
-                </div>
-                <p className="text-white text-lg font-medium">Clique para assistir o vídeo</p>
-              </div>
+            <div className="aspect-video">
+              <iframe
+                src="https://www.youtube.com/embed/LuBiroSOnNQ?autoplay=1&mute=1&rel=0&showinfo=0&controls=1"
+                title="Finanças com Propósito"
+                className="w-full h-full"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
             </div>
-            
-            {/* Overlay para futura integração do vídeo */}
-            <div className="absolute inset-0 bg-black bg-opacity-20 hover:bg-opacity-10 transition-all duration-300 cursor-pointer"></div>
           </div>
 
           <div className="mt-12">
