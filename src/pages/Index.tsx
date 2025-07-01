@@ -1,5 +1,6 @@
 
 import React, { useEffect } from 'react';
+import CountdownTimer from '../components/CountdownTimer';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
 import VideoSection from '../components/VideoSection';
@@ -8,7 +9,6 @@ import QuizSection from '../components/QuizSection';
 import TestimonialsSection from '../components/TestimonialsSection';
 import ContactSection from '../components/ContactSection';
 import FAQSection from '../components/FAQSection';
-import FixedCTAButton from '../components/FixedCTAButton';
 
 const Index = () => {
   useEffect(() => {
@@ -32,6 +32,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <CountdownTimer />
       <HeroSection />
       <AboutSection />
       <VideoSection />
@@ -40,7 +41,6 @@ const Index = () => {
       <TestimonialsSection />
       <ContactSection />
       <FAQSection />
-      <FixedCTAButton />
     </div>
   );
 };

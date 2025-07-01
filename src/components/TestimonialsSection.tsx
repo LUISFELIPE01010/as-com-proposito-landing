@@ -43,22 +43,29 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section className="py-20 bg-elegant-black">
-      <div className="container mx-auto px-6">
+    <section className="py-20 bg-gradient-to-br from-elegant-brown via-elegant-brown to-elegant-black relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-10 left-10 w-20 h-20 border border-elegant-gold rounded-full animate-pulse"></div>
+        <div className="absolute bottom-10 right-10 w-16 h-16 border border-elegant-gold rounded-full animate-bounce"></div>
+        <div className="absolute top-1/2 right-1/4 w-12 h-12 border border-elegant-gold rounded-full animate-pulse"></div>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center animate-on-scroll">
           <h2 className="text-4xl md:text-5xl font-playfair font-bold text-white mb-16">
             Resultados reais de quem colocou o
-            <span className="text-elegant-gold"> método em prática</span>
+            <span className="text-elegant-gold animate-pulse"> método em prática</span>
           </h2>
 
           <div className="relative">
-            <div className="bg-white rounded-2xl p-8 md:p-12 shadow-2xl">
+            <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-2xl border border-elegant-gold/20 animate-fade-in">
               <div className="flex flex-col md:flex-row items-center gap-8">
                 <div className="flex-shrink-0">
                   <img 
                     src={testimonials[currentTestimonial].image}
                     alt={testimonials[currentTestimonial].name}
-                    className="w-24 h-24 rounded-full object-cover border-4 border-elegant-gold"
+                    className="w-24 h-24 rounded-full object-cover border-4 border-elegant-gold shadow-lg"
                   />
                 </div>
                 
@@ -82,14 +89,14 @@ const TestimonialsSection = () => {
             {/* Navigation buttons */}
             <button
               onClick={prevTestimonial}
-              className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 bg-elegant-gold hover:bg-elegant-brown text-white p-3 rounded-full transition-all duration-300 shadow-lg"
+              className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 bg-elegant-gold hover:bg-elegant-gold/80 text-white p-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
             
             <button
               onClick={nextTestimonial}
-              className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 bg-elegant-gold hover:bg-elegant-brown text-white p-3 rounded-full transition-all duration-300 shadow-lg"
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 bg-elegant-gold hover:bg-elegant-gold/80 text-white p-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               <ChevronRight className="w-6 h-6" />
             </button>
@@ -102,7 +109,7 @@ const TestimonialsSection = () => {
                 key={index}
                 onClick={() => setCurrentTestimonial(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentTestimonial ? 'bg-elegant-gold' : 'bg-white opacity-50'
+                  index === currentTestimonial ? 'bg-elegant-gold shadow-lg' : 'bg-white opacity-50 hover:opacity-75'
                 }`}
               />
             ))}
@@ -115,7 +122,7 @@ const TestimonialsSection = () => {
               rel="noopener noreferrer"
               className="inline-block"
             >
-              <Button className="btn-gold text-white px-10 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+              <Button className="btn-gold text-white px-10 py-4 text-lg font-semibold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300">
                 Quero ter esses resultados também
               </Button>
             </a>

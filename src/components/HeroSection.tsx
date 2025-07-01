@@ -4,45 +4,63 @@ import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-elegant-cream relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-elegant-cream via-white to-elegant-cream relative overflow-hidden pt-20">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-20 w-32 h-32 border border-elegant-gold rounded-full"></div>
-        <div className="absolute bottom-20 right-20 w-24 h-24 border border-elegant-brown rounded-full"></div>
-        <div className="absolute top-1/2 left-10 w-16 h-16 border border-elegant-gold rounded-full"></div>
+        <div className="absolute top-20 left-20 w-32 h-32 border border-elegant-gold rounded-full animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-24 h-24 border border-elegant-brown rounded-full animate-bounce"></div>
+        <div className="absolute top-1/2 left-10 w-16 h-16 border border-elegant-gold rounded-full animate-pulse"></div>
+        <div className="absolute top-1/3 right-1/3 w-20 h-20 border border-elegant-brown rounded-full animate-bounce"></div>
       </div>
 
-      <div className="container mx-auto px-6 text-center animate-on-scroll">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-playfair font-bold text-elegant-black mb-8 leading-tight">
-            Organize sua vida financeira com
-            <span className="text-elegant-gold"> leveza</span>,
-            <span className="text-elegant-brown"> clareza</span> e
-            <span className="text-elegant-gold"> autonomia</span>
-          </h1>
-          
-          <h2 className="text-xl md:text-2xl font-inter font-medium text-elegant-brown mb-8 max-w-3xl mx-auto">
-            Mesmo que você ganhe pouco. Mesmo começando do zero. O que você precisa é de direção, não de mais dinheiro.
-          </h2>
+      <div className="container mx-auto px-6">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Conteúdo à esquerda */}
+          <div className="animate-on-scroll">
+            <h1 className="text-4xl md:text-6xl font-playfair font-bold text-elegant-black mb-6 leading-tight text-left">
+              Organize sua vida financeira com
+              <span className="text-elegant-gold animate-pulse"> leveza</span>,
+              <span className="text-elegant-brown"> clareza</span> e
+              <span className="text-elegant-gold animate-pulse"> autonomia</span>
+            </h1>
+            
+            <h2 className="text-lg md:text-xl font-inter font-medium text-elegant-brown mb-6 text-left">
+              Mesmo que você ganhe pouco. Mesmo começando do zero. O que você precisa é de direção, não de mais dinheiro.
+            </h2>
 
-          <div className="bg-white/80 backdrop-blur-sm rounded-lg p-8 mb-10 max-w-3xl mx-auto shadow-lg">
-            <p className="text-lg font-inter text-elegant-black leading-relaxed">
-              A sua realidade financeira não vai mudar só porque você começou a ganhar mais. 
-              Ela muda quando você aprende a lidar com o que já tem. Se hoje você sente que o dinheiro some, 
-              as contas acumulam e a ansiedade não dá trégua, esse curso é para você.
-            </p>
+            <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 mb-8 shadow-xl border border-elegant-gold/20">
+              <p className="text-base font-inter text-elegant-black leading-relaxed text-left">
+                A sua realidade financeira não vai mudar só porque você começou a ganhar mais. 
+                Ela muda quando você aprende a lidar com o que já tem. Se hoje você sente que o dinheiro some, 
+                as contas acumulam e a ansiedade não dá trégua, esse curso é para você.
+              </p>
+            </div>
+
+            <div className="text-left">
+              <a 
+                href="https://pay.kiwify.com.br/pJETYxg" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block"
+              >
+                <Button className="btn-gold text-white px-10 py-5 text-lg font-semibold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 animate-pulse hover:animate-none">
+                  Quero organizar minhas finanças agora
+                </Button>
+              </a>
+            </div>
           </div>
 
-          <a 
-            href="https://pay.kiwify.com.br/pJETYxg" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-block"
-          >
-            <Button className="btn-gold text-white px-12 py-6 text-xl font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
-              Quero organizar minhas finanças agora
-            </Button>
-          </a>
+          {/* Foto à direita */}
+          <div className="animate-on-scroll lg:order-2">
+            <div className="relative">
+              <div className="absolute -inset-4 bg-gradient-to-r from-elegant-gold to-elegant-brown rounded-2xl blur opacity-20 animate-pulse"></div>
+              <img 
+                src="/lovable-uploads/f45aab3c-f72f-483d-80c4-947930a20dd4.png" 
+                alt="Vitória Mendes - Especialista em Finanças"
+                className="relative w-full h-[500px] object-cover rounded-2xl shadow-2xl border-4 border-elegant-gold/30"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
