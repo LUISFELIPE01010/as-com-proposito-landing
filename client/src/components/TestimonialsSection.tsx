@@ -1,14 +1,15 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 
 const TestimonialsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(true);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   // Array com as imagens dos depoimentos
   const testimonialImages = [
     "/1.jpg",
-    "/2.png", 
+    "/2.png",
     "/3.png",
     "/4.png",
     "/5.png",
@@ -27,8 +28,18 @@ const TestimonialsSection = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setIsTransitioning(true);
-      setCurrentIndex((prev) => (prev + 1) % testimonialImages.length);
-    }, 2000); // Pausa de 2 segundos
+      
+      // Aguarda um breve momento antes de mudar o slide
+      setTimeout(() => {
+        setCurrentIndex((prev) => (prev + 1) % testimonialImages.length);
+        
+        // Remove a transição após um tempo para o slide ficar visível
+        setTimeout(() => {
+          setIsTransitioning(false);
+        }, 800); // Duração da transição
+      }, 200);
+      
+    }, 6000); // Intervalo de 6 segundos
 
     return () => clearInterval(interval);
   }, [testimonialImages.length]);
@@ -52,18 +63,28 @@ const TestimonialsSection = () => {
           {/* Carousel Container */}
           <div className="relative overflow-hidden rounded-2xl bg-white/5 p-8">
             <div className="flex justify-center items-center">
-              <div className="w-full max-w-md">
-                <div className="relative">
-                  <img
-                    src={testimonialImages[currentIndex]}
-                    alt={`Resultado ${currentIndex + 1}`}
-                    className={`w-full h-auto max-h-[600px] object-contain rounded-xl shadow-2xl border-4 border-elegant-gold/20 transition-all duration-500 ${
-                      isTransitioning ? 'opacity-100 scale-100' : 'opacity-90 scale-95'
-                    }`}
-                    style={{ aspectRatio: '9/16' }}
-                    onLoad={() => setIsTransitioning(true)}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-xl opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="w-full max-w-md relative">
+                <div className="relative h-[600px] rounded-xl overflow-hidden">
+                  {testimonialImages.map((image, index) => (
+                    <div
+                      key={index}
+                      className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
+                        index === currentIndex
+                          ? 'opacity-100 transform translate-x-0'
+                          : index === (currentIndex - 1 + testimonialImages.length) % testimonialImages.length
+                          ? 'opacity-0 transform -translate-x-full'
+                          : 'opacity-0 transform translate-x-full'
+                      }`}
+                    >
+                      <img
+                        src={image}
+                        alt={`Resultado ${index + 1}`}
+                        className="w-full h-full object-contain rounded-xl shadow-2xl border-4 border-elegant-gold/20"
+                        style={{ aspectRatio: '9/16' }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-xl opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -72,16 +93,12 @@ const TestimonialsSection = () => {
           {/* Dots indicator */}
           <div className="flex justify-center space-x-2 mt-8">
             {testimonialImages.map((_, index) => (
-              <button
+              <div
                 key={index}
-                onClick={() => {
-                  setCurrentIndex(index);
-                  setIsTransitioning(true);
-                }}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                className={`w-3 h-3 rounded-full transition-all duration-500 ${
                   currentIndex === index 
                     ? 'bg-elegant-gold shadow-lg scale-125' 
-                    : 'bg-white opacity-50 hover:opacity-75'
+                    : 'bg-white opacity-50'
                 }`}
               />
             ))}
@@ -101,6 +118,56 @@ const TestimonialsSection = () => {
           </div>
         </div>
       </div>
+
+      {/* Custom CSS for smooth carousel */}
+      <style jsx="true">{`
+        @keyframes slideIn {
+          from {
+            opacity: 0;
+            transform: translateX(100%);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+        
+        @keyframes slideOut {
+          from {
+            opacity: 1;
+            transform: translateX(0);
+          }
+          to {
+            opacity: 0;
+            transform: translateX(-100%);
+          }
+        }
+        
+        @media (max-width: 768px) {
+          .container {
+            padding-left: 1rem;
+            padding-right: 1rem;
+          }
+          
+          .max-w-md {
+            max-width: 100%;
+          }
+          
+          .h-\\[600px\\] {
+            height: 400px;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .h-\\[600px\\] {
+            height: 350px;
+          }
+          
+          .space-y-12 > :not([hidden]) ~ :not([hidden]) {
+            margin-top: 2rem;
+          }
+        }
+      `}</style>
     </section>
   );
 };
