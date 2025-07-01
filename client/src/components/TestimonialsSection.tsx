@@ -1,46 +1,34 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const TestimonialsSection = () => {
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const testimonials = [
-    {
-      name: "Juliana Andrade",
-      description: "Empresária, 32 anos",
-      text: "Sempre achei que precisava ganhar mais. Mas o curso me mostrou que organização vem antes. Hoje tenho paz com meu dinheiro.",
-      image: "/lovable-uploads/8f439b39-2cc0-452d-8ce5-bf13a63dbb23.png"
-    },
-    {
-      name: "Mariana Silva",
-      description: "Profissional Liberal, 28 anos",
-      text: "Em 3 meses consegui quitar minhas dívidas e ainda criar uma reserva. O método da Vitória realmente funciona!",
-      image: "/lovable-uploads/f45aab3c-f72f-483d-80c4-947930a20dd4.png"
-    },
-    {
-      name: "Ana Carolina",
-      description: "Mãe e Empreendedora, 35 anos",
-      text: "Finalmente entendi para onde meu dinheiro estava indo. A planilha é simples e prática, uso todos os dias.",
-      image: "/lovable-uploads/0dab972b-e0d5-4056-9ac0-acbf690b6f4e.png"
-    }
+  // Array com as imagens dos depoimentos
+  const testimonialImages = [
+    "/lovable-uploads/8f439b39-2cc0-452d-8ce5-bf13a63dbb23.png",
+    "/lovable-uploads/f45aab3c-f72f-483d-80c4-947930a20dd4.png", 
+    "/lovable-uploads/0dab972b-e0d5-4056-9ac0-acbf690b6f4e.png",
+    "/lovable-uploads/49d4e77f-7ae9-4ccf-a14b-3f3df35a22bb.png",
+    "/lovable-uploads/f8c08a8f-72b4-4d5b-a514-a19667bf93e5.png"
   ];
+
+  // Duplicar array para efeito infinito
+  const extendedImages = [...testimonialImages, ...testimonialImages, ...testimonialImages];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
+      setCurrentIndex((prev) => {
+        if (prev >= testimonialImages.length * 2) {
+          return 0;
+        }
+        return prev + 1;
+      });
+    }, 3000); // Muda a cada 3 segundos com pausa
+
     return () => clearInterval(interval);
-  }, [testimonials.length]);
-
-  const nextTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const prevTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
+  }, [testimonialImages.length]);
 
   return (
     <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#332816' }}>
@@ -52,64 +40,51 @@ const TestimonialsSection = () => {
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-4xl mx-auto text-center animate-on-scroll">
+        <div className="max-w-6xl mx-auto text-center animate-on-scroll">
           <h2 className="text-4xl md:text-5xl font-playfair font-bold text-white mb-16">
-            Resultados reais de quem colocou o
-            <span className="text-elegant-gold animate-pulse"> método em prática</span>
+            Resultados reais que
+            <span className="text-elegant-gold animate-pulse"> inspiram</span>
           </h2>
 
-          <div className="relative">
-            <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-2xl border border-elegant-gold/20 animate-fade-in">
-              <div className="flex flex-col md:flex-row items-center gap-8">
-                <div className="flex-shrink-0">
-                  <img 
-                    src={testimonials[currentTestimonial].image}
-                    alt={testimonials[currentTestimonial].name}
-                    className="w-24 h-24 rounded-full object-cover border-4 border-elegant-gold shadow-lg"
-                  />
-                </div>
-                
-                <div className="flex-1 text-left">
-                  <blockquote className="text-xl md:text-2xl text-elegant-black font-medium leading-relaxed mb-6">
-                    "{testimonials[currentTestimonial].text}"
-                  </blockquote>
-                  
-                  <div>
-                    <div className="font-semibold text-elegant-brown text-lg">
-                      {testimonials[currentTestimonial].name}
-                    </div>
-                    <div className="text-elegant-black opacity-70">
-                      {testimonials[currentTestimonial].description}
-                    </div>
+          {/* Carousel Container */}
+          <div className="relative overflow-hidden rounded-2xl bg-white/5 p-8">
+            <div 
+              className="flex transition-transform duration-1000 ease-in-out"
+              style={{ 
+                transform: `translateX(-${currentIndex * (100 / 3)}%)`,
+                width: `${extendedImages.length * (100 / 3)}%`
+              }}
+            >
+              {extendedImages.map((image, index) => (
+                <div 
+                  key={index}
+                  className="flex-shrink-0 px-2"
+                  style={{ width: `${100 / extendedImages.length}%` }}
+                >
+                  <div className="relative group">
+                    <img
+                      src={image}
+                      alt={`Resultado ${(index % testimonialImages.length) + 1}`}
+                      className="w-full h-auto max-h-[600px] object-contain rounded-xl shadow-2xl border-4 border-elegant-gold/20 group-hover:border-elegant-gold/40 transition-all duration-300"
+                      style={{ aspectRatio: '9/16' }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
                 </div>
-              </div>
+              ))}
             </div>
-
-            {/* Navigation buttons */}
-            <button
-              onClick={prevTestimonial}
-              className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 bg-elegant-gold hover:bg-elegant-gold/80 text-white p-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
-            
-            <button
-              onClick={nextTestimonial}
-              className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 bg-elegant-gold hover:bg-elegant-gold/80 text-white p-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
-            >
-              <ChevronRight className="w-6 h-6" />
-            </button>
           </div>
 
           {/* Dots indicator */}
           <div className="flex justify-center space-x-2 mt-8">
-            {testimonials.map((_, index) => (
+            {testimonialImages.map((_, index) => (
               <button
                 key={index}
-                onClick={() => setCurrentTestimonial(index)}
+                onClick={() => setCurrentIndex(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentTestimonial ? 'bg-elegant-gold shadow-lg' : 'bg-white opacity-50 hover:opacity-75'
+                  (currentIndex % testimonialImages.length) === index 
+                    ? 'bg-elegant-gold shadow-lg scale-125' 
+                    : 'bg-white opacity-50 hover:opacity-75'
                 }`}
               />
             ))}
@@ -129,6 +104,31 @@ const TestimonialsSection = () => {
           </div>
         </div>
       </div>
+
+      {/* CSS for mobile responsiveness */}
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .container {
+            padding-left: 1rem;
+            padding-right: 1rem;
+          }
+          
+          .flex-shrink-0 {
+            padding-left: 0.25rem;
+            padding-right: 0.25rem;
+          }
+          
+          img {
+            max-height: 400px;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          img {
+            max-height: 300px;
+          }
+        }
+      `}</style>
     </section>
   );
 };
