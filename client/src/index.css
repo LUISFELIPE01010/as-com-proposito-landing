@@ -381,7 +381,7 @@ button:hover, .btn-gold:hover {
 }
 
 .bg-gradient-warm {
-  background: linear-gradient(135deg, #fef9f3 0%, #fdf4e3 25%, #fcf1d6 50%, #faf0d0 75%, #f8eed0 100%);
+  background: linear-gradient(135deg, #fefefe 0%, #fdfcfa 25%, #fcfbf8 50%, #fbfaf7 75%, #faf9f6 100%);
 }
 
 .bg-gradient-soft {
