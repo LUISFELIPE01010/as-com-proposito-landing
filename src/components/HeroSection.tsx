@@ -55,7 +55,7 @@ const HeroSection = () => {
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-elegant-gold to-elegant-brown rounded-2xl blur opacity-20"></div>
               <img 
-                src="/lovable-uploads/49d4e77f-7ae9-4ccf-a14b-3f3df35a22bb.png" 
+                src="/lovable-uploads/f8c08a8f-72b4-4d5b-a514-a19667bf93e5.png" 
                 alt="Vitória Mendes - Especialista em Finanças"
                 className="relative w-full h-[500px] object-cover rounded-2xl shadow-2xl border-4 border-elegant-gold/30"
               />
