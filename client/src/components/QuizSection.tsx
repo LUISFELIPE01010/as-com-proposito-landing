@@ -95,7 +95,7 @@ const QuizSection = () => {
   };
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gradient-cream">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center animate-on-scroll">
           <h2 className="text-4xl md:text-5xl font-playfair font-bold text-elegant-black mb-6">
@@ -108,7 +108,7 @@ const QuizSection = () => {
             No final, receba um diagnóstico e um convite para agir.
           </p>
 
-          <div className="bg-elegant-cream rounded-2xl p-8 shadow-lg">
+          <div className="bg-gradient-card rounded-2xl p-8 shadow-elegant border-elegant-light light-glow">
             {!showResult ? (
               <div>
                 <div className="mb-8">
@@ -134,7 +134,7 @@ const QuizSection = () => {
                     <button
                       key={index}
                       onClick={() => handleAnswer(option.score)}
-                      className="w-full p-4 text-left bg-white rounded-lg border-2 border-transparent hover:border-elegant-gold hover:shadow-md transition-all duration-300"
+                      className="w-full p-4 text-left bg-gradient-card rounded-lg border-2 border-elegant-light hover:border-elegant-gold hover:shadow-elegant transition-all duration-300 light-glow"
                     >
                       <span className="text-elegant-black font-medium">{option.text}</span>
                     </button>

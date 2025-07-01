@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-elegant-light relative overflow-hidden pt-20">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-hero relative overflow-hidden pt-20">
       {/* Modern Background Pattern */}
       <div className="absolute inset-0 opacity-3">
         <div className="absolute top-20 left-20 w-40 h-40 bg-gradient-to-br from-elegant-gold/10 to-transparent rounded-full blur-xl"></div>
@@ -28,7 +28,7 @@ const HeroSection = () => {
               Mesmo que você ganhe pouco. Mesmo começando do zero. O que você precisa é de direção, não de mais dinheiro.
             </h2>
 
-            <div className="modern-card p-8 section-spacing">
+            <div className="bg-gradient-card shadow-elegant p-8 section-spacing rounded-2xl border-elegant-light">
               <p className="text-body text-elegant-black text-left">
                 A sua realidade financeira não vai mudar só porque você começou a ganhar mais. 
                 Ela muda quando você aprende a lidar com o que já tem. Se hoje você sente que o dinheiro some, 
@@ -53,11 +53,11 @@ const HeroSection = () => {
           {/* Foto à direita */}
           <div className="animate-on-scroll lg:order-2">
             <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-r from-elegant-gold to-elegant-brown rounded-2xl blur opacity-20"></div>
+              <div className="absolute -inset-4 bg-gradient-gold rounded-2xl blur opacity-20 animate-pulse-glow"></div>
               <img 
                 src="/lovable-uploads/f8c08a8f-72b4-4d5b-a514-a19667bf93e5.png" 
                 alt="Vitória Mendes - Especialista em Finanças"
-                className="relative w-full h-[500px] object-cover rounded-2xl shadow-2xl border-4 border-elegant-gold/30"
+                className="relative w-full h-[500px] object-cover rounded-2xl shadow-gold hover:shadow-gold-hover transition-all duration-300 border-elegant light-glow"
               />
             </div>
           </div>

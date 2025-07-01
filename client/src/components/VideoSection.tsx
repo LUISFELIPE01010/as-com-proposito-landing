@@ -16,7 +16,7 @@ const VideoSection = () => {
           </p>
 
           {/* Video do YouTube */}
-          <div className="relative bg-black rounded-2xl overflow-hidden shadow-2xl max-w-3xl mx-auto">
+          <div className="relative glass-effect-dark rounded-2xl overflow-hidden shadow-gold max-w-3xl mx-auto border-elegant light-glow">
             <div className="aspect-video">
               <iframe
                 src="https://www.youtube.com/embed/LuBiroSOnNQ?autoplay=1&mute=1&rel=0&showinfo=0&controls=1"

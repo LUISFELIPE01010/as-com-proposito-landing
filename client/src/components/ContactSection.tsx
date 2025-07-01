@@ -4,7 +4,7 @@ import { MessageCircle, Instagram } from 'lucide-react';
 
 const ContactSection = () => {
   return (
-    <section className="py-20 bg-gradient-to-br from-elegant-cream via-white to-elegant-cream relative overflow-hidden">
+    <section className="py-20 bg-gradient-elegant relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-10 right-10 w-24 h-24 border border-elegant-brown rounded-full animate-pulse"></div>
@@ -27,7 +27,7 @@ const ContactSection = () => {
               href="https://wa.me/5513996888557" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center justify-center space-x-3 bg-elegant-brown hover:bg-elegant-brown/90 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:shadow-xl transform hover:scale-105"
+              className="flex items-center justify-center space-x-3 btn-elegant shadow-elegant hover:shadow-elegant-hover transform hover:scale-105"
             >
               <MessageCircle className="w-6 h-6" />
               <span>WhatsApp</span>
@@ -37,14 +37,14 @@ const ContactSection = () => {
               href="https://www.instagram.com/ivitoriamendes_/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center justify-center space-x-3 bg-elegant-brown hover:bg-elegant-brown/90 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:shadow-xl transform hover:scale-105"
+              className="flex items-center justify-center space-x-3 btn-elegant shadow-elegant hover:shadow-elegant-hover transform hover:scale-105"
             >
               <Instagram className="w-6 h-6" />
               <span>Instagram</span>
             </a>
           </div>
 
-          <div className="bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-elegant-gold/20">
+          <div className="bg-gradient-card backdrop-blur-sm p-8 rounded-2xl shadow-gold border-elegant light-glow">
             <a 
               href="https://pay.kiwify.com.br/pJETYxg" 
               target="_blank" 

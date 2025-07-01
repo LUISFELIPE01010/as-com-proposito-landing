@@ -14,7 +14,7 @@ const CopyCentralSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-elegant-cream">
+    <section className="py-20 bg-gradient-warm">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center animate-on-scroll">
           <h2 className="text-4xl md:text-5xl font-playfair font-bold text-elegant-black mb-8">
@@ -40,14 +40,14 @@ const CopyCentralSection = () => {
 
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
             {benefits.map((benefit, index) => (
-              <div key={index} className="flex items-start space-x-4 p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+              <div key={index} className="flex items-start space-x-4 p-6 bg-gradient-card shadow-elegant hover:shadow-elegant-hover rounded-xl border-elegant-light transition-all duration-300 light-glow">
                 <CheckCircle className="w-6 h-6 text-elegant-gold flex-shrink-0 mt-1" />
                 <p className="text-elegant-black font-medium">{benefit}</p>
               </div>
             ))}
           </div>
 
-          <div className="bg-white p-8 rounded-2xl shadow-lg max-w-3xl mx-auto mb-12">
+          <div className="bg-gradient-card shadow-gold p-8 rounded-2xl border-elegant max-w-3xl mx-auto mb-12 light-glow">
             <p className="text-lg text-elegant-black leading-relaxed">
               <strong className="text-elegant-brown">Além das aulas práticas</strong>, você recebe uma 
               <span className="text-elegant-gold font-semibold"> planilha financeira inteligente</span>, 

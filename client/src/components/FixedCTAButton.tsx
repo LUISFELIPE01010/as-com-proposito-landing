@@ -27,7 +27,7 @@ const FixedCTAButton = () => {
         rel="noopener noreferrer"
         className="inline-block"
       >
-        <button className="btn-gold text-white px-8 py-4 rounded-full font-semibold shadow-2xl hover:shadow-3xl transition-all duration-300 text-sm md:text-base">
+        <button className="btn-gold text-white px-8 py-4 rounded-full font-semibold shadow-gold hover:shadow-gold-hover transition-all duration-300 text-sm md:text-base light-glow animate-pulse-glow">
           Quero organizar minhas finanças
         </button>
       </a>

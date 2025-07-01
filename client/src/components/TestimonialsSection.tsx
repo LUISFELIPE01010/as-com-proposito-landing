@@ -51,7 +51,7 @@ const TestimonialsSection = () => {
   }, [groupedImages.length]);
 
   return (
-    <section className="elegant-section relative overflow-hidden" style={{ backgroundColor: '#332816' }}>
+    <section className="elegant-section relative overflow-hidden bg-gradient-dark">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-10 left-10 w-20 h-20 border border-elegant-gold rounded-full animate-pulse"></div>
@@ -67,7 +67,7 @@ const TestimonialsSection = () => {
           </h2>
 
           {/* Carousel Container - Três imagens lado a lado */}
-          <div className="relative overflow-hidden rounded-2xl bg-white/5 p-8">
+          <div className="relative overflow-hidden rounded-2xl glass-effect-dark shadow-gold p-8 border-elegant">
             <div className="flex justify-center items-center">
               <div className="w-full max-w-6xl relative">
                 <div className="relative min-h-[500px] rounded-xl overflow-hidden">

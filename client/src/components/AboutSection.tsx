@@ -4,14 +4,14 @@ import { Button } from '@/components/ui/button';
 
 const AboutSection = () => {
   return (
-    <section className="elegant-section bg-elegant-cream">
+    <section className="elegant-section bg-gradient-section">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           {/* Foto da autora */}
           <div className="animate-on-scroll">
             <div className="relative">
-              <div className="absolute -inset-6 bg-gradient-to-r from-elegant-gold/20 to-elegant-brown/20 rounded-2xl blur-2xl"></div>
-              <div className="modern-card overflow-hidden">
+              <div className="absolute -inset-6 bg-gradient-gold rounded-2xl blur-2xl opacity-20 animate-pulse-glow"></div>
+              <div className="bg-gradient-card shadow-elegant hover:shadow-elegant-hover transition-all duration-300 overflow-hidden rounded-2xl border-elegant-light light-glow">
                 <img 
                   src="/lovable-uploads/49d4e77f-7ae9-4ccf-a14b-3f3df35a22bb.png" 
                   alt="Vitória Mendes - Especialista em Finanças"
