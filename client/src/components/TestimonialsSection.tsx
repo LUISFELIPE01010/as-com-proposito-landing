@@ -7,11 +7,21 @@ const TestimonialsSection = () => {
 
   // Array com as imagens dos depoimentos
   const testimonialImages = [
-    "/lovable-uploads/8f439b39-2cc0-452d-8ce5-bf13a63dbb23.png",
-    "/lovable-uploads/f45aab3c-f72f-483d-80c4-947930a20dd4.png", 
-    "/lovable-uploads/0dab972b-e0d5-4056-9ac0-acbf690b6f4e.png",
-    "/lovable-uploads/49d4e77f-7ae9-4ccf-a14b-3f3df35a22bb.png",
-    "/lovable-uploads/f8c08a8f-72b4-4d5b-a514-a19667bf93e5.png"
+    "/1.jpg",
+    "/2.png",
+    "/3.png",
+    "/4.png",
+    "/5.png",
+    "/6.png",
+    "/7.png",
+    "/8.png",
+    "/9.png",
+    "/10.png",
+    "/11.jpg",
+    "/12.jpg",
+    "/13.png",
+    "/14.jpg",
+    "/15.jpg"
   ];
 
   // Duplicar array para efeito infinito
@@ -106,7 +116,7 @@ const TestimonialsSection = () => {
       </div>
 
       {/* CSS for mobile responsiveness */}
-      <style jsx>{`
+      <style jsx="true">{`
         @media (max-width: 768px) {
           .container {
             padding-left: 1rem;
