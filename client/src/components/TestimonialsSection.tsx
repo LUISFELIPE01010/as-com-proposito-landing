@@ -43,7 +43,7 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-elegant-brown via-elegant-brown to-elegant-black relative overflow-hidden">
+    <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#332816' }}>
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-10 left-10 w-20 h-20 border border-elegant-gold rounded-full animate-pulse"></div>
