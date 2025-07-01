@@ -4,32 +4,32 @@ import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-elegant-cream via-white to-elegant-cream relative overflow-hidden pt-20">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-20 w-32 h-32 border border-elegant-gold rounded-full"></div>
-        <div className="absolute bottom-20 right-20 w-24 h-24 border border-elegant-brown rounded-full"></div>
-        <div className="absolute top-1/2 left-10 w-16 h-16 border border-elegant-gold rounded-full"></div>
-        <div className="absolute top-1/3 right-1/3 w-20 h-20 border border-elegant-brown rounded-full"></div>
+    <section className="min-h-screen flex items-center justify-center bg-elegant-light relative overflow-hidden pt-20">
+      {/* Modern Background Pattern */}
+      <div className="absolute inset-0 opacity-3">
+        <div className="absolute top-20 left-20 w-40 h-40 bg-gradient-to-br from-elegant-gold/10 to-transparent rounded-full blur-xl"></div>
+        <div className="absolute bottom-20 right-20 w-32 h-32 bg-gradient-to-br from-elegant-brown/10 to-transparent rounded-full blur-xl"></div>
+        <div className="absolute top-1/2 left-10 w-24 h-24 bg-gradient-to-br from-elegant-gold/15 to-transparent rounded-full blur-lg"></div>
+        <div className="absolute top-1/3 right-1/3 w-28 h-28 bg-gradient-to-br from-elegant-brown/10 to-transparent rounded-full blur-lg"></div>
       </div>
 
-      <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="container mx-auto px-6 max-w-7xl">
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
           {/* Conteúdo à esquerda */}
-          <div className="animate-on-scroll">
-            <h1 className="text-4xl md:text-6xl font-playfair font-bold text-elegant-black mb-6 leading-tight text-left">
+          <div className="animate-on-scroll space-y-8">
+            <h1 className="heading-primary text-elegant-black text-left">
               Organize sua vida financeira com
               <span className="text-elegant-gold"> leveza</span>,
               <span className="text-elegant-brown"> clareza</span> e
               <span className="text-elegant-gold"> autonomia</span>
             </h1>
             
-            <h2 className="text-lg md:text-xl font-inter font-medium text-elegant-brown mb-6 text-left">
+            <h2 className="text-large text-elegant-brown text-left font-medium">
               Mesmo que você ganhe pouco. Mesmo começando do zero. O que você precisa é de direção, não de mais dinheiro.
             </h2>
 
-            <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 mb-8 shadow-xl border border-elegant-gold/20">
-              <p className="text-base font-inter text-elegant-black leading-relaxed text-left">
+            <div className="modern-card p-8 section-spacing">
+              <p className="text-body text-elegant-black text-left">
                 A sua realidade financeira não vai mudar só porque você começou a ganhar mais. 
                 Ela muda quando você aprende a lidar com o que já tem. Se hoje você sente que o dinheiro some, 
                 as contas acumulam e a ansiedade não dá trégua, esse curso é para você.
@@ -43,7 +43,7 @@ const HeroSection = () => {
                 rel="noopener noreferrer"
                 className="inline-block"
               >
-                <Button className="btn-gold text-white px-10 py-5 text-lg font-semibold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300">
+                <Button className="btn-gold text-white text-lg font-semibold">
                   Quero organizar minhas finanças agora
                 </Button>
               </a>

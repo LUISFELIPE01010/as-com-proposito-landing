@@ -1,4 +1,6 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -74,11 +76,17 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
   }
   
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
   }
 }
 
@@ -105,48 +113,141 @@ html {
   background: #6d5a3d;
 }
 
-/* Utility classes */
+/* Modern Professional Colors */
 .text-elegant-black {
-  color: #111111;
+  color: #1a1a1a;
 }
 
 .text-elegant-brown {
-  color: #413118;
+  color: #4a3b2a;
 }
 
 .text-elegant-gold {
-  color: #907A51;
+  color: #b8860b;
+}
+
+.text-elegant-gray {
+  color: #6b7280;
 }
 
 .bg-elegant-black {
-  background-color: #111111;
+  background-color: #1a1a1a;
 }
 
 .bg-elegant-brown {
-  background-color: #413118;
+  background-color: #4a3b2a;
 }
 
 .bg-elegant-gold {
-  background-color: #907A51;
+  background: linear-gradient(135deg, #b8860b 0%, #daa520 50%, #b8860b 100%);
 }
 
 .bg-elegant-cream {
-  background-color: #FAF8F5;
+  background: linear-gradient(135deg, #fefdfb 0%, #f8f6f1 100%);
+}
+
+.bg-elegant-light {
+  background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
 }
 
 .border-elegant-gold {
-  border-color: #907A51;
+  border-color: #b8860b;
 }
 
-/* Button hover effects */
+.border-elegant-light {
+  border-color: #e5e7eb;
+}
+
+/* Modern Button Styles */
 .btn-gold {
-  background: linear-gradient(135deg, #907A51 0%, #B8A067 100%);
-  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #b8860b 0%, #daa520 50%, #b8860b 100%);
+  border: none;
+  border-radius: 12px;
+  padding: 16px 32px;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+  box-shadow: 0 4px 15px rgba(184, 134, 11, 0.25);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gold::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
 }
 
 .btn-gold:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 15px 35px rgba(144, 122, 81, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(184, 134, 11, 0.4);
+  background: linear-gradient(135deg, #daa520 0%, #ffd700 50%, #daa520 100%);
+}
+
+.btn-gold:hover::before {
+  left: 100%;
+}
+
+.btn-gold:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(184, 134, 11, 0.3);
+}
+
+/* Modern Card Styles */
+.modern-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(229, 231, 235, 0.5);
+  border-radius: 20px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modern-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  border-color: rgba(184, 134, 11, 0.2);
+}
+
+.elegant-section {
+  padding: 80px 0;
+}
+
+.section-spacing {
+  margin-bottom: 48px;
+}
+
+/* Enhanced Typography */
+.heading-primary {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.heading-secondary {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.text-large {
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.text-body {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #4b5563;
 }
 
 /* Enhanced Animations */
