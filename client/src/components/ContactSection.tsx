@@ -27,7 +27,7 @@ const ContactSection = () => {
               href="https://wa.me/5513996888557" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center justify-center space-x-3 bg-gradient-to-r from-elegant-brown to-elegant-brown/80 hover:from-elegant-brown/90 hover:to-elegant-brown text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:shadow-xl transform hover:scale-105"
+              className="flex items-center justify-center space-x-3 bg-elegant-brown hover:bg-elegant-brown/90 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:shadow-xl transform hover:scale-105"
             >
               <MessageCircle className="w-6 h-6" />
               <span>WhatsApp</span>
@@ -37,7 +37,7 @@ const ContactSection = () => {
               href="https://www.instagram.com/ivitoriamendes_/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center justify-center space-x-3 bg-gradient-to-r from-elegant-brown to-elegant-brown/80 hover:from-elegant-brown/90 hover:to-elegant-brown text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:shadow-xl transform hover:scale-105"
+              className="flex items-center justify-center space-x-3 bg-elegant-brown hover:bg-elegant-brown/90 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:shadow-xl transform hover:scale-105"
             >
               <Instagram className="w-6 h-6" />
               <span>Instagram</span>
