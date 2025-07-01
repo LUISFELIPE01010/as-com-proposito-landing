@@ -7,10 +7,10 @@ const HeroSection = () => {
     <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-elegant-cream via-white to-elegant-cream relative overflow-hidden pt-20">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-20 w-32 h-32 border border-elegant-gold rounded-full animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-24 h-24 border border-elegant-brown rounded-full animate-bounce"></div>
-        <div className="absolute top-1/2 left-10 w-16 h-16 border border-elegant-gold rounded-full animate-pulse"></div>
-        <div className="absolute top-1/3 right-1/3 w-20 h-20 border border-elegant-brown rounded-full animate-bounce"></div>
+        <div className="absolute top-20 left-20 w-32 h-32 border border-elegant-gold rounded-full"></div>
+        <div className="absolute bottom-20 right-20 w-24 h-24 border border-elegant-brown rounded-full"></div>
+        <div className="absolute top-1/2 left-10 w-16 h-16 border border-elegant-gold rounded-full"></div>
+        <div className="absolute top-1/3 right-1/3 w-20 h-20 border border-elegant-brown rounded-full"></div>
       </div>
 
       <div className="container mx-auto px-6">
@@ -19,9 +19,9 @@ const HeroSection = () => {
           <div className="animate-on-scroll">
             <h1 className="text-4xl md:text-6xl font-playfair font-bold text-elegant-black mb-6 leading-tight text-left">
               Organize sua vida financeira com
-              <span className="text-elegant-gold animate-pulse"> leveza</span>,
+              <span className="text-elegant-gold"> leveza</span>,
               <span className="text-elegant-brown"> clareza</span> e
-              <span className="text-elegant-gold animate-pulse"> autonomia</span>
+              <span className="text-elegant-gold"> autonomia</span>
             </h1>
             
             <h2 className="text-lg md:text-xl font-inter font-medium text-elegant-brown mb-6 text-left">
@@ -43,7 +43,7 @@ const HeroSection = () => {
                 rel="noopener noreferrer"
                 className="inline-block"
               >
-                <Button className="btn-gold text-white px-10 py-5 text-lg font-semibold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 animate-pulse hover:animate-none">
+                <Button className="btn-gold text-white px-10 py-5 text-lg font-semibold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300">
                   Quero organizar minhas finanças agora
                 </Button>
               </a>
@@ -53,9 +53,9 @@ const HeroSection = () => {
           {/* Foto à direita */}
           <div className="animate-on-scroll lg:order-2">
             <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-r from-elegant-gold to-elegant-brown rounded-2xl blur opacity-20 animate-pulse"></div>
+              <div className="absolute -inset-4 bg-gradient-to-r from-elegant-gold to-elegant-brown rounded-2xl blur opacity-20"></div>
               <img 
-                src="/lovable-uploads/f45aab3c-f72f-483d-80c4-947930a20dd4.png" 
+                src="/lovable-uploads/49d4e77f-7ae9-4ccf-a14b-3f3df35a22bb.png" 
                 alt="Vitória Mendes - Especialista em Finanças"
                 className="relative w-full h-[500px] object-cover rounded-2xl shadow-2xl border-4 border-elegant-gold/30"
               />

@@ -45,8 +45,15 @@ const CountdownTimer = () => {
           </div>
         </div>
 
-        <div className="bg-gradient-to-r from-elegant-gold to-yellow-400 px-4 py-2 rounded-lg shadow-lg">
-          <span className="text-elegant-black font-bold text-sm">PLANILHA R$ 19,90</span>
+        <div className="bg-elegant-brown hover:bg-elegant-black px-4 py-2 rounded-lg shadow-lg transition-colors">
+          <a 
+            href="https://pay.kiwify.com.br/pJETYxg" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-white font-bold text-sm"
+          >
+            GARANTA AGORA
+          </a>
         </div>
       </div>
     </div>

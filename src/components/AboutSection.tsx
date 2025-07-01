@@ -13,7 +13,7 @@ const AboutSection = () => {
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-r from-elegant-gold to-elegant-brown rounded-lg blur opacity-20"></div>
                 <img 
-                  src="/lovable-uploads/f45aab3c-f72f-483d-80c4-947930a20dd4.png" 
+                  src="/lovable-uploads/49d4e77f-7ae9-4ccf-a14b-3f3df35a22bb.png" 
                   alt="Vitória Mendes - Especialista em Finanças"
                   className="relative w-full h-[500px] object-cover rounded-lg shadow-2xl"
                 />
