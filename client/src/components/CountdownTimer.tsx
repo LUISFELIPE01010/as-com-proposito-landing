@@ -34,9 +34,9 @@ const CountdownTimer = () => {
           </span>
 
           {/* Cronômetro minimalista */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3" style={{ fontFamily: 'Poppins, sans-serif' }}>
             <div className="flex items-center gap-1">
-              <span className="text-white text-2xl font-bold font-mono">
+              <span className="text-white text-2xl font-bold">
                 {mins}
               </span>
               <span className="text-white/70 text-xs">MIN</span>
@@ -45,7 +45,7 @@ const CountdownTimer = () => {
             <span className="text-white/50 text-xl">:</span>
 
             <div className="flex items-center gap-1">
-              <span className="text-white text-2xl font-bold font-mono">
+              <span className="text-white text-2xl font-bold">
                 {secs}
               </span>
               <span className="text-white/70 text-xs">SEG</span>
