@@ -23,7 +23,7 @@ const CountdownTimer = () => {
   const { mins, secs } = formatTime(timeLeft);
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 bg-elegant-brown text-white py-3 shadow-lg animate-slide-down">
+    <div className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-elegant-brown via-elegant-brown to-amber-900/80 text-white py-3 shadow-lg animate-slide-down">
       <div className="container mx-auto px-6 flex items-center justify-between">
         <div className="flex items-center space-x-2">
           <span className="text-sm font-medium">A OFERTA ENCERRA EM:</span>
