@@ -98,12 +98,12 @@ const QuizSection = () => {
     <section className="py-20 bg-gradient-cream">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center animate-on-scroll">
-          <h2 className="text-4xl md:text-5xl font-playfair font-bold text-elegant-black mb-6">
+          <h2 className="text-4xl md:text-5xl font-playfair font-bold text-elegant-white mb-6">
             Em que nível está sua
             <span className="text-elegant-gold"> vida financeira</span> hoje?
           </h2>
           
-          <p className="text-xl text-elegant-brown mb-12">
+          <p className="text-xl text-elegant-gold mb-12">
             Responda a perguntas rápidas e descubra se você tem controle real sobre o seu dinheiro. 
             No final, receba um diagnóstico e um convite para agir.
           </p>

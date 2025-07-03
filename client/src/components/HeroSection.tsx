@@ -17,19 +17,19 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           {/* Conteúdo à esquerda */}
           <div className="animate-on-scroll space-y-8">
-            <h1 className="heading-primary text-elegant-black text-left">
+            <h1 className="heading-primary text-elegant-white text-left">
               Organize sua vida financeira com
               <span className="text-elegant-gold"> leveza</span>,
               <span className="text-elegant-brown"> clareza</span> e
               <span className="text-elegant-gold"> autonomia</span>
             </h1>
             
-            <h2 className="text-large text-elegant-brown text-left font-medium">
+            <h2 className="text-large text-elegant-gold text-left font-medium">
               Mesmo que você ganhe pouco. Mesmo começando do zero. O que você precisa é de direção, não de mais dinheiro.
             </h2>
 
             <div className="bg-gradient-card shadow-elegant p-8 section-spacing rounded-2xl border-elegant-light">
-              <p className="text-body text-elegant-black text-left">
+              <p className="text-body text-elegant-white text-left">
                 A sua realidade financeira não vai mudar só porque você começou a ganhar mais. 
                 Ela muda quando você aprende a lidar com o que já tem. Se hoje você sente que o dinheiro some, 
                 as contas acumulam e a ansiedade não dá trégua, esse curso é para você.

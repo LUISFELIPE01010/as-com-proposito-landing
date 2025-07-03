@@ -115,3 +115,12 @@ Changelog:
   * Improved button styles with modern animations and transitions
   * Updated all landing page sections with cohesive visual hierarchy
   * Replaced solid colors with subtle, warm gradients for professional appearance
+- July 01, 2025. Major theme overhaul to dark professional design:
+  * Converted entire site to elegant dark theme with high contrast
+  * Updated color system: dark backgrounds (#1a1a1a family) with gold/yellow accents
+  * Maintained excellent readability with white text on dark backgrounds
+  * Removed VideoSection completely as requested
+  * Completely rebuilt TestimonialsSection with text-based carousel featuring user avatars
+  * Enhanced course content communication - clearly shows both video lessons AND spreadsheet included
+  * Improved responsive design with comprehensive mobile optimization
+  * Added professional carousel navigation and auto-rotation for testimonials

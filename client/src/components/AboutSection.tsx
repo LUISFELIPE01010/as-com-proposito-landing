@@ -23,7 +23,7 @@ const AboutSection = () => {
 
           {/* Conteúdo */}
           <div className="animate-on-scroll space-y-8">
-            <h2 className="heading-secondary text-elegant-black">
+            <h2 className="heading-secondary text-elegant-white">
               Quem está por trás do
               <span className="text-elegant-gold"> Finanças com Propósito</span>
             </h2>

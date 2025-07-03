@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import CountdownTimer from '../components/CountdownTimer';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
-import VideoSection from '../components/VideoSection';
+
 import CopyCentralSection from '../components/CopyCentralSection';
 import QuizSection from '../components/QuizSection';
 import TestimonialsSection from '../components/TestimonialsSection';
@@ -31,11 +31,11 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-hero">
       <CountdownTimer />
       <HeroSection />
       <AboutSection />
-      <VideoSection />
+
       <CopyCentralSection />
       <QuizSection />
       <TestimonialsSection />

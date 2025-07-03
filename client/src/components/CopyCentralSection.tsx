@@ -17,14 +17,14 @@ const CopyCentralSection = () => {
     <section className="py-20 bg-gradient-warm">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center animate-on-scroll">
-          <h2 className="text-4xl md:text-5xl font-playfair font-bold text-elegant-black mb-8">
+          <h2 className="text-4xl md:text-5xl font-playfair font-bold text-elegant-white mb-8">
             Você não precisa de mais dinheiro.
             <br />
             <span className="text-elegant-gold">Precisa de clareza.</span>
           </h2>
 
-          <div className="text-left max-w-3xl mx-auto space-y-6 text-lg font-inter text-elegant-black leading-relaxed mb-12">
-            <p className="text-center text-xl font-medium text-elegant-brown">
+          <div className="text-left max-w-3xl mx-auto space-y-6 text-lg font-inter text-elegant-white leading-relaxed mb-12">
+            <p className="text-center text-xl font-medium text-elegant-gold">
               Quantas vezes você já se prometeu que esse seria o mês da virada?
             </p>
             
@@ -33,7 +33,7 @@ const CopyCentralSection = () => {
               O problema não está na sua renda. Está na ausência de método.
             </p>
 
-            <p className="font-semibold text-elegant-brown text-xl text-center">
+            <p className="font-semibold text-elegant-gold text-xl text-center">
               O Finanças com Propósito vai te mostrar, passo a passo:
             </p>
           </div>
@@ -42,17 +42,47 @@ const CopyCentralSection = () => {
             {benefits.map((benefit, index) => (
               <div key={index} className="flex items-start space-x-4 p-6 bg-gradient-card shadow-elegant hover:shadow-elegant-hover rounded-xl border-elegant-light transition-all duration-300 light-glow">
                 <CheckCircle className="w-6 h-6 text-elegant-gold flex-shrink-0 mt-1" />
-                <p className="text-elegant-black font-medium">{benefit}</p>
+                <p className="text-elegant-white font-medium">{benefit}</p>
               </div>
             ))}
           </div>
 
-          <div className="bg-gradient-card shadow-gold p-8 rounded-2xl border-elegant max-w-3xl mx-auto mb-12 light-glow">
-            <p className="text-lg text-elegant-black leading-relaxed">
-              <strong className="text-elegant-brown">Além das aulas práticas</strong>, você recebe uma 
-              <span className="text-elegant-gold font-semibold"> planilha financeira inteligente</span>, 
-              simples de usar e adaptada à sua realidade.
-            </p>
+          {/* O que você recebe */}
+          <div className="bg-gradient-card shadow-gold p-8 rounded-2xl border-elegant max-w-4xl mx-auto mb-12 light-glow">
+            <h3 className="text-2xl font-playfair font-bold text-elegant-white text-center mb-8">
+              O que você recebe no <span className="text-elegant-gold">Finanças com Propósito</span>
+            </h3>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <span className="text-2xl">🎓</span>
+                </div>
+                <h4 className="text-xl font-semibold text-elegant-gold mb-3">Aulas Completas</h4>
+                <p className="text-elegant-white leading-relaxed">
+                  Vídeo aulas práticas e diretas ao ponto que ensinam o método passo a passo. 
+                  Aprenda no seu ritmo, quantas vezes precisar.
+                </p>
+              </div>
+              
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <span className="text-2xl">📊</span>
+                </div>
+                <h4 className="text-xl font-semibold text-elegant-gold mb-3">Planilha Inteligente</h4>
+                <p className="text-elegant-white leading-relaxed">
+                  Uma planilha financeira exclusiva, simples de usar e totalmente adaptada ao método. 
+                  Organize tudo de forma visual e prática.
+                </p>
+              </div>
+            </div>
+            
+            <div className="mt-8 p-6 bg-gradient-to-r from-yellow-400/10 to-yellow-600/10 rounded-xl border border-yellow-400/20">
+              <p className="text-lg text-elegant-white text-center font-medium">
+                <span className="text-elegant-gold font-semibold">Acesso vitalício:</span> 
+                Assista às aulas e use a planilha pelo tempo que precisar, sem pressa!
+              </p>
+            </div>
           </div>
 
           <a 
