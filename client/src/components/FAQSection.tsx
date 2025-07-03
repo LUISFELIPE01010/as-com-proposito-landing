@@ -41,34 +41,34 @@ const FAQSection = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-soft glow-waves">
-      <div className="container mx-auto px-6">
+    <section className="py-16 md:py-20 bg-gradient-soft glow-waves">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto animate-on-scroll">
-          <h2 className="text-4xl md:text-5xl font-playfair font-bold text-elegant-white text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-playfair font-bold text-elegant-white text-center mb-12 sm:mb-16">
             Perguntas
             <span className="text-elegant-gold"> Frequentes</span>
           </h2>
 
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             {faqs.map((faq, index) => (
               <div key={index} className="faq-item bg-gradient-card shadow-elegant hover:shadow-elegant-hover rounded-xl overflow-hidden border-elegant-light light-glow">
                 <button
                   onClick={() => toggleItem(index)}
-                  className="w-full p-6 text-left flex justify-between items-center hover:bg-white/50 transition-colors duration-300"
+                  className="w-full p-4 sm:p-6 text-left flex justify-between items-center hover:bg-white/50 transition-colors duration-300"
                 >
-                  <h3 className="text-lg font-semibold text-elegant-black pr-4">
+                  <h3 className="text-base sm:text-lg font-semibold text-elegant-black pr-4">
                     {faq.question}
                   </h3>
                   {openItem === index ? (
-                    <ChevronUp className="w-6 h-6 text-elegant-gold flex-shrink-0" />
+                    <ChevronUp className="w-5 h-5 sm:w-6 sm:h-6 text-elegant-gold flex-shrink-0" />
                   ) : (
-                    <ChevronDown className="w-6 h-6 text-elegant-gold flex-shrink-0" />
+                    <ChevronDown className="w-5 h-5 sm:w-6 sm:h-6 text-elegant-gold flex-shrink-0" />
                   )}
                 </button>
                 
                 {openItem === index && (
-                  <div className="px-6 pb-6">
-                    <p className="text-elegant-black leading-relaxed">
+                  <div className="px-4 sm:px-6 pb-4 sm:pb-6">
+                    <p className="text-elegant-black leading-relaxed text-sm sm:text-base">
                       {faq.answer}
                     </p>
                   </div>

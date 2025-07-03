@@ -90,15 +90,15 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-section flickering-lights relative overflow-hidden">
-      <div className="container mx-auto px-6 max-w-6xl relative z-10">
-        <div className="text-center animate-on-scroll space-y-12">
-          <h2 className="text-4xl md:text-5xl font-playfair font-bold text-elegant-white mb-6">
+    <section className="py-16 md:py-20 bg-gradient-section flickering-lights relative overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl relative z-10">
+        <div className="text-center animate-on-scroll space-y-8 sm:space-y-12">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-playfair font-bold text-elegant-white mb-4 sm:mb-6">
             Resultados reais que
             <span className="text-elegant-gold animate-pulse"> inspiram</span>
           </h2>
 
-          <p className="text-xl text-elegant-gray mb-12 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-elegant-gray mb-8 sm:mb-12 max-w-2xl mx-auto">
             Veja o que nossas alunas estão falando sobre sua transformação financeira
           </p>
 
