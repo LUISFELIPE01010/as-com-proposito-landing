@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { CheckCircle, GraduationCap, BarChart3 } from 'lucide-react';
@@ -27,7 +26,7 @@ const CopyCentralSection = () => {
             <p className="text-center text-lg sm:text-xl font-medium text-elegant-gold">
               Quantas vezes você já se prometeu que esse seria o mês da virada?
             </p>
-            
+
             <p>
               Mas os boletos vencem, o cartão estoura, e sobra só frustração.
               O problema não está na sua renda. Está na ausência de método.
@@ -52,7 +51,7 @@ const CopyCentralSection = () => {
             <h3 className="text-2xl font-playfair font-bold text-elegant-white text-center mb-8">
               O que você recebe no <span className="text-elegant-gold">Finanças com Propósito</span>
             </h3>
-            
+
             <div className="grid md:grid-cols-2 gap-8">
               <div className="text-center">
                 <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full mx-auto mb-4 flex items-center justify-center">
@@ -64,7 +63,7 @@ const CopyCentralSection = () => {
                   Aprenda no seu ritmo, quantas vezes precisar.
                 </p>
               </div>
-              
+
               <div className="text-center">
                 <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full mx-auto mb-4 flex items-center justify-center">
                   <BarChart3 className="w-8 h-8 text-white" />
@@ -76,7 +75,7 @@ const CopyCentralSection = () => {
                 </p>
               </div>
             </div>
-            
+
             <div className="mt-8 p-6 bg-gradient-to-r from-yellow-400/10 to-yellow-600/10 rounded-xl border border-yellow-400/20">
               <p className="text-lg text-elegant-white text-center font-medium">
                 <span className="text-elegant-gold font-semibold">Acesso vitalício:</span> 
