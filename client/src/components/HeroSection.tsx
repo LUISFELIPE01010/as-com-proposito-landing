@@ -31,7 +31,7 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           {/* Conteúdo à esquerda */}
           <div className="animate-on-scroll space-y-8">
-            <h1 className="heading-secondary text-elegant-white text-left">
+            <h1 className="text-4xl md:text-5xl font-bold text-elegant-white text-left leading-tight">
               Organize sua vida financeira com
               <span className="text-elegant-gold"> leveza</span>,
               <span className="text-elegant-brown"> clareza</span> e
