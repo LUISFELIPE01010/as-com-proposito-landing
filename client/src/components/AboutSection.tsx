@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 
 const AboutSection = () => {
   return (
-    <section className="elegant-section bg-gradient-section gentle-glow">
+    <section className="elegant-section bg-gradient-section flickering-lights">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           {/* Foto da autora */}

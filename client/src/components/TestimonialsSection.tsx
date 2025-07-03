@@ -64,7 +64,7 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-section gentle-glow relative overflow-hidden">
+    <section className="py-20 bg-gradient-section flickering-lights relative overflow-hidden">
       <div className="container mx-auto px-6 max-w-6xl relative z-10">
         <div className="text-center animate-on-scroll space-y-12">
           <h2 className="text-4xl md:text-5xl font-playfair font-bold text-elegant-white mb-6">
