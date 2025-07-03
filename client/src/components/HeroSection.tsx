@@ -29,7 +29,7 @@ const HeroSection = () => {
             </h2>
 
             <div className="bg-gradient-card shadow-elegant p-8 section-spacing rounded-2xl border-elegant-light">
-              <p className="text-body text-elegant-white text-left">
+              <p className="text-body text-white text-left">
                 A sua realidade financeira não vai mudar só porque você começou a ganhar mais. 
                 Ela muda quando você aprende a lidar com o que já tem. Se hoje você sente que o dinheiro some, 
                 as contas acumulam e a ansiedade não dá trégua, esse curso é para você.
