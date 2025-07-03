@@ -15,8 +15,6 @@ const HeroSection = () => {
           decoding="async"
           fetchPriority="high"
         />
-        {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/50"></div>
       </div>
       
       {/* Modern Background Pattern */}
