@@ -29,13 +29,13 @@ const AboutSection = () => {
             </h2>
 
             <div className="space-y-6">
-              <p className="text-body text-white">
-                Eu sou <strong className="text-elegant-brown font-semibold">Vitória Mendes</strong>, especialista em recuperação de crédito, 
+              <p className="text-body !text-white">
+                Eu sou <strong className="text-elegant-gold font-semibold">Vitória Mendes</strong>, especialista em recuperação de crédito, 
                 consultora financeira e CEO do Instituto Vitória Mendes. Atuo há mais de cinco anos ajudando 
                 famílias a recuperarem sua estabilidade financeira com orientação prática, realista e acessível.
               </p>
 
-              <p className="text-body text-white">
+              <p className="text-body !text-white">
                 Minha missão é empoderar mulheres com conhecimento e ferramentas que funcionam. 
                 Nada de fórmulas mágicas ou promessas vazias. Você vai aprender, aplicar e sentir 
                 os resultados na sua rotina.
