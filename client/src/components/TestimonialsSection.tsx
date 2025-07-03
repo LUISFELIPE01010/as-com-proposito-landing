@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Star } from 'lucide-react';
 
 const TestimonialsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+  const carouselRef = useRef<HTMLDivElement>(null);
 
   const testimonials = [
     {
@@ -63,6 +66,29 @@ const TestimonialsSection = () => {
     setCurrentIndex(index);
   };
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const minSwipeDistance = 50;
+
+    if (distance > minSwipeDistance) {
+      // Swipe left - next slide
+      goToNext();
+    } else if (distance < -minSwipeDistance) {
+      // Swipe right - previous slide
+      goToPrev();
+    }
+  };
+
   return (
     <section className="py-20 bg-gradient-section flickering-lights relative overflow-hidden">
       <div className="container mx-auto px-6 max-w-6xl relative z-10">
@@ -78,60 +104,56 @@ const TestimonialsSection = () => {
 
           {/* Testimonials Carousel */}
           <div className="relative max-w-4xl mx-auto">
-            <div className="bg-gradient-card shadow-gold rounded-2xl p-8 md:p-12 border-elegant min-h-[300px] flex items-center">
+            <div 
+              ref={carouselRef}
+              className="bg-gradient-card shadow-gold rounded-2xl p-4 sm:p-6 md:p-8 lg:p-12 border-elegant min-h-[300px] sm:min-h-[350px] flex items-center cursor-grab active:cursor-grabbing"
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+            >
               <div className="w-full">
-                <div className="flex justify-center mb-6">
+                <div className="flex justify-center mb-4 sm:mb-6">
                   {Array.from({ length: testimonials[currentIndex].rating }).map((_, i) => (
-                    <Star key={i} className="w-6 h-6 text-yellow-400 fill-current" />
+                    <Star key={i} className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-400 fill-current" />
                   ))}
                 </div>
 
-                <blockquote className="text-lg md:text-xl text-elegant-white leading-relaxed mb-8 text-center italic">
+                <blockquote className="text-sm sm:text-base md:text-lg lg:text-xl text-elegant-white leading-relaxed mb-6 sm:mb-8 text-center italic px-2">
                   "{testimonials[currentIndex].text}"
                 </blockquote>
 
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-xl font-bold text-gray-900">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center">
+                    <span className="text-lg sm:text-xl font-bold text-gray-900">
                       {testimonials[currentIndex].name.split(' ').map(n => n[0]).join('')}
                     </span>
                   </div>
-                  <h4 className="text-lg font-semibold text-elegant-gold mb-1">
+                  <h4 className="text-base sm:text-lg font-semibold text-elegant-gold mb-1">
                     {testimonials[currentIndex].name}
                   </h4>
-                  <p className="text-elegant-gray">
+                  <p className="text-sm sm:text-base text-elegant-gray">
                     {testimonials[currentIndex].location}
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Navigation Arrows */}
-            <button
-              onClick={goToPrev}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gradient-card hover:bg-yellow-400 text-elegant-white hover:text-gray-900 rounded-full p-3 shadow-elegant hover:shadow-gold transition-all duration-300"
-              aria-label="Depoimento anterior"
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
-
-            <button
-              onClick={goToNext}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gradient-card hover:bg-yellow-400 text-elegant-white hover:text-gray-900 rounded-full p-3 shadow-elegant hover:shadow-gold transition-all duration-300"
-              aria-label="Próximo depoimento"
-            >
-              <ChevronRight className="w-6 h-6" />
-            </button>
+            {/* Swipe instruction for mobile */}
+            <div className="text-center mt-4 md:hidden">
+              <p className="text-xs text-elegant-gray">
+                Deslize para ver mais depoimentos
+              </p>
+            </div>
 
             {/* Dots Indicator */}
-            <div className="flex justify-center mt-8 space-x-2">
+            <div className="flex justify-center mt-6 sm:mt-8 space-x-2">
               {testimonials.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
                     index === currentIndex
-                      ? 'bg-yellow-400 w-8'
+                      ? 'bg-yellow-400 w-6 sm:w-8'
                       : 'bg-gray-600 hover:bg-gray-500'
                   }`}
                   aria-label={`Ir para depoimento ${index + 1}`}

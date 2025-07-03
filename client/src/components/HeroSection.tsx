@@ -27,51 +27,51 @@ const HeroSection = () => {
       </div>
 
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          {/* Conteúdo à esquerda */}
-          <div className="animate-on-scroll space-y-8">
-            <h1 className="text-4xl md:text-5xl font-bold text-elegant-white text-left leading-tight">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-center">
+          {/* Foto - primeira no mobile, segunda no desktop */}
+          <div className="animate-on-scroll order-1 lg:order-2">
+            <div className="relative">
+              <div className="absolute -inset-4 bg-gradient-gold rounded-2xl blur opacity-20 animate-pulse-glow"></div>
+              <img 
+                src="/perfil.JPG" 
+                alt="Vitória Mendes - Especialista em Finanças"
+                className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover rounded-2xl shadow-gold hover:shadow-gold-hover transition-all duration-300 border-elegant light-glow"
+              />
+            </div>
+          </div>
+
+          {/* Conteúdo - segundo no mobile, primeiro no desktop */}
+          <div className="animate-on-scroll space-y-6 lg:space-y-8 order-2 lg:order-1">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-elegant-white text-center lg:text-left leading-tight px-2 lg:px-0">
               Organize sua vida financeira com
               <span className="text-elegant-gold"> leveza</span>,
               <span className="text-elegant-brown"> clareza</span> e
               <span className="text-elegant-gold"> autonomia</span>
             </h1>
             
-            <h2 className="text-large text-elegant-gold text-left font-medium">
+            <h2 className="text-base sm:text-lg lg:text-xl text-elegant-gold text-center lg:text-left font-medium px-4 lg:px-0">
               Mesmo que você ganhe pouco. Mesmo começando do zero. O que você precisa é de direção, não de mais dinheiro.
             </h2>
 
-            <div className="bg-gradient-card shadow-elegant p-8 section-spacing rounded-2xl border-elegant-light">
-              <p className="text-body !text-white text-left">
+            <div className="bg-gradient-card shadow-elegant p-4 sm:p-6 lg:p-8 rounded-2xl border-elegant-light mx-4 lg:mx-0">
+              <p className="text-sm sm:text-base !text-white text-center lg:text-left leading-relaxed">
                 A sua realidade financeira não vai mudar só porque você começou a ganhar mais. 
                 Ela muda quando você aprende a lidar com o que já tem. Se hoje você sente que o dinheiro some, 
                 as contas acumulam e a ansiedade não dá trégua, esse curso é para você.
               </p>
             </div>
 
-            <div className="text-left">
+            <div className="text-center lg:text-left px-4 lg:px-0">
               <a 
                 href="https://pay.kiwify.com.br/pJETYxg" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-block"
               >
-                <Button className="btn-gold text-white text-lg font-semibold">
+                <Button className="btn-gold text-white text-base sm:text-lg font-semibold px-6 sm:px-8 py-3 sm:py-4">
                   Quero organizar minhas finanças agora
                 </Button>
               </a>
-            </div>
-          </div>
-
-          {/* Foto à direita */}
-          <div className="animate-on-scroll lg:order-2">
-            <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-gold rounded-2xl blur opacity-20 animate-pulse-glow"></div>
-              <img 
-                src="/perfil.JPG" 
-                alt="Vitória Mendes - Especialista em Finanças"
-                className="relative w-full h-[500px] object-cover rounded-2xl shadow-gold hover:shadow-gold-hover transition-all duration-300 border-elegant light-glow"
-              />
             </div>
           </div>
         </div>
