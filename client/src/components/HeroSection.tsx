@@ -4,7 +4,21 @@ import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-hero relative overflow-hidden pt-20">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+      {/* Background Image */}
+      <div className="absolute inset-0 w-full h-full">
+        <img 
+          src="/hero.png" 
+          alt="Hero Background"
+          className="w-full h-full object-cover object-center"
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
+        />
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/50"></div>
+      </div>
+      
       {/* Modern Background Pattern */}
       <div className="absolute inset-0 opacity-3">
         <div className="absolute top-20 left-20 w-40 h-40 bg-gradient-to-br from-elegant-gold/10 to-transparent rounded-full blur-xl"></div>
@@ -13,7 +27,7 @@ const HeroSection = () => {
         <div className="absolute top-1/3 right-1/3 w-28 h-28 bg-gradient-to-br from-elegant-brown/10 to-transparent rounded-full blur-lg"></div>
       </div>
 
-      <div className="container mx-auto px-6 max-w-7xl">
+      <div className="container mx-auto px-6 max-w-7xl relative z-10">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           {/* Conteúdo à esquerda */}
           <div className="animate-on-scroll space-y-8">
