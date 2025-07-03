@@ -131,3 +131,4 @@ Changelog:
   * Maintained professional dark theme while adding natural lighting depth
   * Ensured seamless visual connection between all sections
   * Removed distracting decorative elements in favor of subtle atmospheric effects
+  * Fixed React warnings by removing invalid DOM attributes
