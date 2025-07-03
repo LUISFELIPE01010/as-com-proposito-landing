@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle, GraduationCap, BarChart3 } from 'lucide-react';
 
 const CopyCentralSection = () => {
   const benefits = [
@@ -56,7 +56,7 @@ const CopyCentralSection = () => {
             <div className="grid md:grid-cols-2 gap-8">
               <div className="text-center">
                 <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-2xl">🎓</span>
+                  <GraduationCap className="w-8 h-8 text-white" />
                 </div>
                 <h4 className="text-xl font-semibold text-elegant-gold mb-3">Aulas Completas</h4>
                 <p className="text-elegant-white leading-relaxed">
@@ -67,7 +67,7 @@ const CopyCentralSection = () => {
               
               <div className="text-center">
                 <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-2xl">📊</span>
+                  <BarChart3 className="w-8 h-8 text-white" />
                 </div>
                 <h4 className="text-xl font-semibold text-elegant-gold mb-3">Planilha Inteligente</h4>
                 <p className="text-elegant-white leading-relaxed">
