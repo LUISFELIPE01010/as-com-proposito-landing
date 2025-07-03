@@ -13,7 +13,7 @@ const AboutSection = () => {
               <div className="absolute -inset-6 bg-gradient-gold rounded-2xl blur-2xl opacity-20 animate-pulse-glow"></div>
               <div className="bg-gradient-card shadow-elegant hover:shadow-elegant-hover transition-all duration-300 overflow-hidden rounded-2xl border-elegant-light light-glow">
                 <img 
-                  src="/lovable-uploads/49d4e77f-7ae9-4ccf-a14b-3f3df35a22bb.png" 
+                  src="/perfil 2.JPG" 
                   alt="Vitória Mendes - Especialista em Finanças"
                   className="relative w-full h-[500px] object-cover"
                 />
