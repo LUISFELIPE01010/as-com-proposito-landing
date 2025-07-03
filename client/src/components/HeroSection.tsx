@@ -69,7 +69,7 @@ const HeroSection = () => {
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-gold rounded-2xl blur opacity-20 animate-pulse-glow"></div>
               <img 
-                src="/lovable-uploads/f8c08a8f-72b4-4d5b-a514-a19667bf93e5.png" 
+                src="/perfil.JPG" 
                 alt="Vitória Mendes - Especialista em Finanças"
                 className="relative w-full h-[500px] object-cover rounded-2xl shadow-gold hover:shadow-gold-hover transition-all duration-300 border-elegant light-glow"
               />
