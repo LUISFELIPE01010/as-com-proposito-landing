@@ -95,7 +95,7 @@ const QuizSection = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-cream floating-elements">
+    <section className="py-20 bg-gradient-cream ambient-light">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center animate-on-scroll">
           <h2 className="text-4xl md:text-5xl font-playfair font-bold text-elegant-white mb-6">

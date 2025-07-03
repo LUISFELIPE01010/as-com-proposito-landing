@@ -41,7 +41,7 @@ const FAQSection = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-soft pattern-dots">
+    <section className="py-20 bg-gradient-soft floating-lights">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto animate-on-scroll">
           <h2 className="text-4xl md:text-5xl font-playfair font-bold text-elegant-white text-center mb-16">

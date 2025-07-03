@@ -64,14 +64,7 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-section floating-elements relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-10 left-10 w-20 h-20 border border-yellow-400 rounded-full animate-pulse"></div>
-        <div className="absolute bottom-10 right-10 w-16 h-16 border border-yellow-400 rounded-full animate-bounce"></div>
-        <div className="absolute top-1/2 right-1/4 w-12 h-12 border border-yellow-400 rounded-full animate-pulse"></div>
-      </div>
-
+    <section className="py-20 bg-gradient-section gentle-glow relative overflow-hidden">
       <div className="container mx-auto px-6 max-w-6xl relative z-10">
         <div className="text-center animate-on-scroll space-y-12">
           <h2 className="text-4xl md:text-5xl font-playfair font-bold text-elegant-white mb-6">
