@@ -4,18 +4,18 @@ import { MessageCircle, Instagram } from 'lucide-react';
 
 const ContactSection = () => {
   return (
-    <section className="py-20 bg-gradient-elegant moving-circles relative overflow-hidden">
-      <div className="container mx-auto px-6 relative z-10">
+    <section className="py-16 md:py-20 bg-gradient-elegant moving-circles relative overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-3xl mx-auto text-center animate-on-scroll">
-          <h2 className="text-4xl md:text-5xl font-playfair font-bold text-elegant-white mb-8">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-playfair font-bold text-elegant-white mb-6 sm:mb-8">
             Precisa falar comigo?
           </h2>
           
-          <p className="text-xl text-elegant-gold mb-12 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-elegant-gold mb-8 sm:mb-12 max-w-2xl mx-auto">
             Caso tenha dúvidas antes de comprar, estou à disposição no WhatsApp.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 max-w-2xl mx-auto mb-8 sm:mb-12">
             <a 
               href="https://wa.me/5513996888557" 
               target="_blank" 
