@@ -49,10 +49,12 @@ const AboutSection = () => {
                 href="https://pay.kiwify.com.br/pJETYxg" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-block"
+                className="inline-block w-full sm:w-auto"
               >
-                <Button className="btn-gold text-white text-base sm:text-lg font-semibold px-6 sm:px-8 py-3 sm:py-4">
-                  Conheça o método que já mudou centenas de vidas
+                <Button className="btn-gold text-white text-sm sm:text-base lg:text-lg font-semibold px-4 sm:px-6 lg:px-8 py-3 sm:py-4 w-full sm:w-auto leading-tight">
+                  <span className="text-center block sm:inline">
+                    Conheça o método que já mudou<br className="sm:hidden" /> centenas de vidas
+                  </span>
                 </Button>
               </a>
             </div>

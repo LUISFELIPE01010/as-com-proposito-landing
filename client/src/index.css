@@ -930,22 +930,22 @@ button:hover, .btn-gold:hover {
     font-size: 1.75rem;
     line-height: 1.2;
   }
-  
+
   .heading-secondary {
     font-size: 1.5rem;
     line-height: 1.3;
   }
-  
+
   .text-large {
     font-size: 0.95rem;
     line-height: 1.5;
   }
-  
+
   .text-body {
     font-size: 0.9rem;
     line-height: 1.6;
   }
-  
+
   .btn-gold,
   .btn-elegant {
     padding: 10px 20px;
@@ -953,19 +953,19 @@ button:hover, .btn-gold:hover {
     width: auto;
     min-width: fit-content;
   }
-  
+
   .modern-card,
   .bg-gradient-card {
     padding: 1rem;
     margin: 0.5rem;
   }
-  
+
   .container {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
     max-width: 100%;
   }
-  
+
   .elegant-section {
     padding: 2.5rem 0;
   }
@@ -1002,12 +1002,12 @@ button:hover, .btn-gold:hover {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
+
   .grid.md\\:grid-cols-2 {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .grid.md\\:grid-cols-3 {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
@@ -1018,19 +1018,19 @@ button:hover, .btn-gold:hover {
   .grid.md\\:grid-cols-3 {
     grid-template-columns: 1fr;
   }
-  
+
   .text-4xl.md\\:text-5xl {
     font-size: 1.5rem;
   }
-  
+
   .text-xl {
     font-size: 1rem;
   }
-  
+
   .p-8 {
     padding: 1rem;
   }
-  
+
   .py-20 {
     padding-top: 2rem;
     padding-bottom: 2rem;
@@ -1078,4 +1078,48 @@ button:hover, .btn-gold:hover {
   .leading-tight {
     line-height: 1.3;
   }
+
+  /* Better button text wrapping */
+  button span {
+    word-break: break-word;
+    hyphens: auto;
+    line-height: 1.3;
+  }
+
+  /* Specific styling for AboutSection button */
+  .btn-gold span {
+    display: block;
+    text-align: center;
+  }
+
+  /* Ensure buttons have proper width on mobile */
+  .btn-gold,
+  .btn-elegant {
+    min-width: 100%;
+    max-width: 100%;
+    white-space: normal;
+  }
 }
+
+@media (max-width: 768px) {
+    /* Better button text wrapping */
+    button span {
+      word-break: break-word;
+      hyphens: auto;
+      line-height: 1.3;
+    }
+  
+    /* Specific styling for AboutSection button */
+    .btn-gold span {
+      display: block;
+      text-align: center;
+    }
+  
+    /* Ensure buttons have proper width on mobile */
+    .btn-gold,
+    .btn-elegant {
+      min-width: 100%;
+      max-width: 100%;
+      white-space: normal;
+    }
+  }
