@@ -8,7 +8,7 @@ const FAQSection = () => {
   const faqs = [
     {
       question: "Para quem é indicado o curso Finanças com Propósito?",
-      answer: "O curso é perfeito para mulheres que querem organizar suas finanças, independentemente da renda. Se você sente que o dinheiro some, tem dificuldade para guardar ou vive no vermelho, esse método vai te ajudar."
+      answer: "O curso é perfeito para pessoas que querem organizar suas finanças, independentemente da renda. Se você sente que o dinheiro some, tem dificuldade para guardar ou vive no vermelho, esse método vai te ajudar."
     },
     {
       question: "Preciso ter conhecimento prévio em finanças?",
