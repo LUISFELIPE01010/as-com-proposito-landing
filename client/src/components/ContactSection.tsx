@@ -4,7 +4,7 @@ import { MessageCircle, Instagram } from 'lucide-react';
 
 const ContactSection = () => {
   return (
-    <section className="py-20 bg-gradient-elegant relative overflow-hidden">
+    <section className="py-20 bg-gradient-elegant pattern-dots relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-10 right-10 w-24 h-24 border border-elegant-brown rounded-full animate-pulse"></div>

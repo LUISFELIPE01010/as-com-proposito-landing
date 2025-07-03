@@ -14,7 +14,7 @@ const CopyCentralSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-warm">
+    <section className="py-20 bg-gradient-warm pattern-dots">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center animate-on-scroll">
           <h2 className="text-4xl md:text-5xl font-playfair font-bold text-elegant-white mb-8">
