@@ -8,13 +8,15 @@ const HeroSection = () => {
       {/* Background Image */}
       <div className="absolute inset-0 w-full h-full">
         <img 
-          src="/hero.png" 
+          src="/heros.png" 
           alt="Hero Background"
           className="w-full h-full object-cover object-center"
           loading="eager"
           decoding="async"
           fetchPriority="high"
         />
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/50"></div>
       </div>
       
       {/* Modern Background Pattern */}
